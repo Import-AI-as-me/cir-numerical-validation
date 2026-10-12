@@ -13,8 +13,8 @@
 考虑 CIR 短率模型，价格为折现因子的期望，敏感度定义为初始短率导数的相反数：
 
 $$
-dr_t=\kappa(\theta-r_t)\,dt+\sigma\sqrt{r_t}\,dW_t,
-\qquad P=\mathbb E\!\left[e^{-\int_0^T r_s\,ds}\right],
+dr_t=\kappa(\theta-r_t)\thinspace{}dt+\sigma\sqrt{r_t}\thinspace{}dW_t,
+\qquad P=\mathbb E\left[e^{-\int_0^T r_s\thinspace{}ds}\right],
 \qquad G=-\frac{\partial P}{\partial r_0}.
 $$
 

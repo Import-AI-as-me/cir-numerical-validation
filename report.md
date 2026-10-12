@@ -9,14 +9,14 @@ Exact simulation of a diffusion at grid points does not make a discretized path 
 Under the risk-neutral measure, consider
 
 $$
-dr_t=\kappa(\theta-r_t)\,dt+\sigma\sqrt{r_t}\,dW_t,
+dr_t=\kappa(\theta-r_t)\thinspace{}dt+\sigma\sqrt{r_t}\thinspace{}dW_t,
 \qquad \kappa,\theta,\sigma>0,\quad r_0\geq0.
 $$
 
 The targets are a unit-notional discount bond and its initial-short-rate sensitivity magnitude:
 
 $$
-P(T,r_0)=\mathbb E\!\left[\exp\!\left(-\int_0^T r_s\,ds\right)\right],
+P(T,r_0)=\mathbb E\left[\exp\left(-\int_0^T r_s\thinspace{}ds\right)\right],
 \qquad G=-\partial_{r_0}P.
 $$
 
@@ -74,13 +74,13 @@ $$
 r_{t+h}\mid r_t=x\sim c\chi_d^{\prime 2}(qx/c),
 \qquad
 \mathbb E[e^{-ur_{t+h}}\mid r_t=x]
-=(1+2cu)^{-d/2}\exp\!\left(-\frac{qux}{1+2cu}\right).
+=(1+2cu)^{-d/2}\exp\left(-\frac{qux}{1+2cu}\right).
 $$
 
 **Recursion and proof.** Let $F_j(x)$ be the expected discount factor over $j$ grid intervals starting at $x$. Start with $F_0(x)=1=\exp(-a_0-b_0x)$. The Markov property gives
 
 $$
-F_{j+1}(x)=e^{-hx/2}\mathbb E\!\left[e^{-hr_h/2}F_j(r_h)\mid r_0=x\right].
+F_{j+1}(x)=e^{-hx/2}\mathbb E\left[e^{-hr_h/2}F_j(r_h)\mid r_0=x\right].
 $$
 
 Substitute $F_j(y)=\exp(-a_j-b_jy)$ and the conditional transform. With $u_j=b_j+h/2$, this becomes $\exp(-a_{j+1}-b_{j+1}x)$, where
@@ -116,7 +116,7 @@ For $(\kappa,\theta,\sigma,T)=(0.6,0.04,0.1,5)$ and annual steps, $r^*=0.0400853
 All three schemes use trapezoidal discounting. **Exact** samples the noncentral chi-square transition. **Full-truncation Euler** retains a potentially negative auxiliary state:
 
 $$
-X_{j+1}=X_j+\kappa(\theta-X_j^+)h+\sigma\sqrt{X_j^+h}\,Z_j,
+X_{j+1}=X_j+\kappa(\theta-X_j^+)h+\sigma\sqrt{X_j^+h}\thinspace{}Z_j,
 \qquad r_j^{\mathrm{used}}=X_j^+,
 $$
 

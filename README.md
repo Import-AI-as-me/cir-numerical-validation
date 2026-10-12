@@ -13,8 +13,8 @@ This repository is a reproducible numerical validation study of CIR discounting.
 For the CIR short-rate model,
 
 $$
-dr_t=\kappa(\theta-r_t)\,dt+\sigma\sqrt{r_t}\,dW_t,
-\qquad P=\mathbb E\!\left[e^{-\int_0^T r_s\,ds}\right],
+dr_t=\kappa(\theta-r_t)\thinspace{}dt+\sigma\sqrt{r_t}\thinspace{}dW_t,
+\qquad P=\mathbb E\left[e^{-\int_0^T r_s\thinspace{}ds}\right],
 \qquad G=-\frac{\partial P}{\partial r_0}.
 $$
 
