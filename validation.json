@@ -1,0 +1,125 @@
+{
+  "validated_on": "2026-10-12",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "1.26.4",
+    "matplotlib": "3.8.4"
+  },
+  "dependency_check": "pip check: No broken requirements found.",
+  "commands": [
+    {
+      "command": "python study.py --verify-only",
+      "exit_code": 0,
+      "status": "passed",
+      "checks": {
+        "regular": {
+          "continuous_price": 0.8328831290324864,
+          "fine_grid_abs_error": 1.0165235320158672e-10
+        },
+        "boundary": {
+          "continuous_price": 0.9410615103726594,
+          "fine_grid_abs_error": 1.222661971667094e-10
+        },
+        "severe": {
+          "continuous_price": 0.9802245365828613,
+          "fine_grid_abs_error": 7.019740344560432e-11
+        },
+        "exact_sampler": {
+          "pooled_z_to_grid_target": -0.7159213755976789,
+          "estimated_to_exact_variance_ratio": 1.0039712116713362
+        },
+        "qe_moments": [
+          {
+            "x": 0.0001,
+            "mean_z": -0.8808491246351728,
+            "variance_ratio": 0.9963287310499477
+          },
+          {
+            "x": 0.03,
+            "mean_z": 0.09075753010616962,
+            "variance_ratio": 0.9939935708938726
+          },
+          {
+            "x": 0.5,
+            "mean_z": -0.9848362853537277,
+            "variance_ratio": 1.00161091668313
+          }
+        ]
+      }
+    },
+    {
+      "command": "python -m unittest -v",
+      "exit_code": 0,
+      "tests_run": 9,
+      "status": "passed",
+      "independent_benchmarks": [
+        "RK4 integration of the CIR Riccati ODE",
+        "Gaussian quadratic-form determinant for integer-dimensional CIR as an OU square sum",
+        "Finite-difference initial-rate sensitivities",
+        "Zero-load normalization"
+      ],
+      "output_protection": [
+        "Nonempty destinations are refused",
+        "Repository root is refused",
+        "verify-only creates no result files"
+      ]
+    },
+    {
+      "command": "python study.py --quick --output-dir <temporary-empty-directory>",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "command": "Repeat quick run into the same populated directory",
+      "exit_code": 2,
+      "status": "correctly refused without overwriting"
+    }
+  ],
+  "archived_artifacts": {
+    "summary.csv": {
+      "sha256": "730ba313a0545c61c715237c2ca9166c4a4f37a30ded4fd4553a575560601cae",
+      "byte_identical_to_research_archive": true
+    },
+    "analytic_grid.csv": {
+      "sha256": "c1cacd88ae47514960868d14aa79d45ea7010a4b05bb45346cd94f25a1bf5293",
+      "byte_identical_to_research_archive": true
+    },
+    "cancellation_counterexamples.csv": {
+      "sha256": "139e0a7bc6afface38b7849af32c70c30ba65dfda548e3541b8cf36a9936463e",
+      "byte_identical_to_research_archive": true
+    },
+    "replicates.csv": {
+      "sha256": "5626dd1156b08911d10eeb485eff371b05d4d7ba061857ab83489c399a0b6230",
+      "byte_identical_to_research_archive": true
+    },
+    "results.json": {
+      "sha256": "a8c9f1d0a7b79a76650ca63229dd0659ace90fe71f39eb85cc64fb27593ab9e7",
+      "byte_identical_to_research_archive": true
+    },
+    "error_audit.png": {
+      "sha256": "4bc0c521effa72d05f4e4e3742090d7908e5eb0448d8f0f49370135845d2c8f7",
+      "byte_identical_to_research_archive": true
+    },
+    "price_greek_cancellation.png": {
+      "sha256": "11b58b398f86bcce9ad70f8cd341e5e2d6fa56e6313588d9050d9556fe2b2299",
+      "byte_identical_to_research_archive": true
+    }
+  },
+  "quick_result": {
+    "configurations": 36,
+    "batches_per_configuration": 4,
+    "paths_per_batch": 512,
+    "replicate_rows": 144,
+    "all_seven_outputs_created": true
+  },
+  "tested_code_sha256": {
+    "study.py": "ec46cbb6686d6fe4d8eea1ae3c59c82f3fa594a922b01527e91164c58dba319f",
+    "test_validation.py": "31fba24f91f1ad7f48239f522ef41724361a43799994f02713f5ef5e6c91edf1"
+  },
+  "notes": [
+    "The clean validation environment used publicly installable NumPy 1.26.4 and Matplotlib 3.8.4 on Python 3.12.14.",
+    "The archived full experiment was not rerun or replaced. The quick run is only a smoke test.",
+    "Original recorded package releases were also found on PyPI when checked; their availability is not promised on every platform.",
+    "No claim of cross-version bitwise reproducibility is made."
+  ]
+}
